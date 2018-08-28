@@ -91,7 +91,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content === '!accepte') {
-    if(message.channel.id == "483644849296244736") {
+    if(message.channel.id == "484039928494424085") {
       var RoleToAdd = message.guild.roles.find('name', '🌟 Membres');
       let nRole = message.guild.roles.find(`name`,'👤 Visiteur');
       var memberCount = bot.users.size;
@@ -107,7 +107,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content === '!refuser') {
-    if(message.channel.id == "483644849296244736") {
+    if(message.channel.id == "484039928494424085") {
       var RoleToAdd = message.guild.roles.find('name', '📛 Membre bloquer');
       let nRole = message.guild.roles.find(`name`,'👤 Visiteur');
       var memberCount = bot.users.size;
