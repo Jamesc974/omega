@@ -189,7 +189,7 @@ bot.on('message', message => {
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "annonce")) {
     if(message.author.id == "404351381093351425") {
-      if(message.channel.id == "484038127464349697") {
+      if(message.channel.id == "484046684859400192") {
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ")
         var iconm = message.author.avatarURL
