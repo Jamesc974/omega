@@ -166,7 +166,7 @@ bot.on('message', message => {
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "pap")) {
     if(message.author.id == "404351381093351425") {
-      if(message.channel.id == "483022735144910848") {
+      if(message.channel.id == "484044429288538134") {
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ")
         var iconm = message.author.avatarURL
@@ -189,7 +189,7 @@ bot.on('message', message => {
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "annonce")) {
     if(message.author.id == "404351381093351425") {
-      if(message.channel.id == "483660327377174539") {
+      if(message.channel.id == "484038127464349697") {
         let args = message.content.split(" ").slice(1);
         let thingToEcho = args.join(" ")
         var iconm = message.author.avatarURL
@@ -217,7 +217,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "idee")) {
-    if(message.channel.id == "483023305410871324") {
+    if(message.channel.id == "484045711017508875") {
       let args = message.content.split(" ").slice(1);
       let thingToEcho = args.join(" ")
       var iconm = message.author.avatarURL
@@ -228,7 +228,7 @@ bot.on('message', message => {
         .setTimestamp()
         .setFooter(`•`)
       message.delete().catch(O_o=>{});
-      message.guild.channels.find("name", "annonces").sendEmbed(embed)
+      message.guild.channels.find("name", "boite-à-idées").sendEmbed(embed)
       .then(function (message) {
         message.react("👍")
         message.react("👎")
@@ -243,7 +243,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "18+")) {
-    if(message.channel.id == "483023420779528202") {
+    if(message.channel.id == "484045711017508875") {
       var iconm = message.author.avatarURL
       var embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, iconm)
