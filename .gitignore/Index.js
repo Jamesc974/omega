@@ -444,3 +444,118 @@ bot.on('message', async message => {
 		}
 	}
 });
+
+bot.on('message', async message => {
+
+	//Variable to reach simply the message
+	const splitMessage = message.content.split(' ');
+
+	//function used to determine if the message channel is the botChannel defined on the setting file
+	function isBotChannel() {
+		return ((message.channel.id === setting.salonBotId));
+	}
+	function isCommand(command) {
+		return splitMessage[0] === setting.prefix + command;
+	}
+	if (message.author.bot) return;
+
+	//prefix check
+	if (!splitMessage[0].startsWith(setting.prefix)) return;
+
+	//BotChannel check
+	if (isBotChannel()) {
+
+		if (isCommand('jeux')) {
+
+			//role id for the years
+			let Fortnite = "484349487414902784";
+			let Minecraft = "484349752763482127";
+			let CSGO = "484349861517328395";
+			let ArmaIII = "484349931914526721";
+			let PUBG = "484349989800247297";
+			let GTAV = "484350077612064768";
+			let RocketLeague = "484350151737999381";
+			let ForHonor = "484350226421907469";
+			let Garrysmod = "484350307330162698";
+			
+
+
+			if (message.member.roles.has("359433618512150539")) { return sendError(message, `Impossible d\'effectuer l\'action, vous êtes déjà considéré comme présenté. Si \n besoin envoyé un message à <@175586990916501505> ou <@&356867242924965889>`); }
+
+			let messageAuthorId = message.author.id;
+
+			function takeReactionOfTheYear() {
+				let yearChoose = new Discord.RichEmbed()
+					.setTitle("Bienvenue sur le serveur")
+					.setDescription("*Merci d'indiquer t'es roles que tu désire*")
+					.setColor("#8B008B")
+					.addField("Fortnite", "🌠", true)
+					.addField("Minecraft", "🌍", true)
+					.addField("CSGO", "💣", true)
+					.addField("Arma III", "🔫", true)
+					.addField("PUBG", "🌀", true)
+					.addField("GTA V", "🏦", true)
+					.addField("Rocket League", "🚀", true)
+					.addField("For Honor", "🛡", true)
+					.addField("Garry's Mod", "🔵", true)
+					.addField("❓ Vous avez d'autres idées de jeux ?", "Faite le nous s'avoir", true)
+					.setFooter("By TarKyo");
+
+				//send embed ans add reaction
+				message.author.send({ embed: yearChoose }).then(async embedMessage => {
+					await embedMessage.react("🌠");
+					await embedMessage.react("🌍");
+					await embedMessage.react("💣");
+					await embedMessage.react("🔫");
+					await embedMessage.react("🌀");
+					await embedMessage.react("🏦");
+					await embedMessage.react("🚀");
+					await embedMessage.react("🛡");
+					await embedMessage.react("🔵");
+
+					// Create a reaction collector
+					const filter = (reaction, user) => (reaction.emoji.name === "🌠" || reaction.emoji.name === "🌍" || reaction.emoji.name === "💣" || reaction.emoji.name === "🔫" || reaction.emoji.name === "🌀" || reaction.emoji.name === "🏦" || reaction.emoji.name === "🚀" || reaction.emoji.name === "🛡" || reaction.emoji.name === "🔵" ) && user.id === messageAuthorId
+					// (reaction.emoji.name === "🎮" || reaction.emoji.name === "📷" || reaction.emoji.name === "🌠" || reaction.emoji.name === "📖" || reaction.emoji.name === "🖌" || reaction.emoji.name === "🎁" || reaction.emoji.name === "🌌" || reaction.emoji.name === "⚡" || reaction.emoji.name === "🐺" ) && user.id === messageAuthorId
+					const collector = embedMessage.createReactionCollector(filter, { time: 555555555 ,max: 9999, maxEmojis: 99999, maxUsers: 9999 })
+					await collector.on("collect", async MessageReaction => {
+						//action of one reaction
+						const chosen = MessageReaction.emoji.name;
+
+						switch (chosen) {
+							case "🌠":
+								message.member.addRole(Fortnite);
+								break;
+							case "🌍":
+								message.member.addRole(Minecraft);
+								break;
+							case "💣":
+								message.member.addRole(CSGO);
+								break;
+							case "🔫":
+								message.member.addRole(ArmaIII);
+								break;
+							case "🌀":
+								message.member.addRole(PUBG);
+								break;
+							case "🏦":
+								message.member.addRole(GTAV);
+								break;
+							case "🚀":
+								message.member.addRole(RocketLeague);
+								break;
+							case "🛡":
+								message.member.addRole(ForHonor);
+								break;
+							case "🔵":
+								message.member.addRole(Garrysmod);
+								break;
+						}
+					});
+				}).catch(console.log);
+			}
+			message.delete();
+			sendEmbed(message, `Un message privée t'as été envoyé, merci de le regarder`, 'reply', true)
+			takeReactionOfTheYear();
+		}
+	}
+});
