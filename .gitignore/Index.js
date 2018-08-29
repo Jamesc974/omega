@@ -233,14 +233,14 @@ bot.on('message', message => {
       let args = message.content.split(" ").slice(1);
       let thingToEcho = args.join(" ")
       var iconm = message.author.avatarURL
-      var embed = new Discord.RichEmbed()
+      var idee = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, iconm)
         .addField("Iddé:", thingToEcho)
         .setColor("#A901DB")
         .setTimestamp()
         .setFooter(`•`)
       message.delete().catch(O_o=>{});
-      message.guild.channels.find("name", "boite-à-idées").sendEmbed(embed)
+      message.guild.channels.find("name", "boite-à-idées").sendEmbed(idee)
       .then(function (message) {
         message.react("👍")
         message.react("👎")
