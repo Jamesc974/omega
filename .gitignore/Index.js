@@ -22,9 +22,21 @@ fs.readdir("./commands/", (err, files) => {
       });
 });
 
-// player, nous te souhaitons la bienvenue :HappyPanda: !
-// Nous t'invitons à lire le salon #informations pour en savoir plus sur la communauté et passer par le salon #les-rôles pour t'assigner les rôles que tu souhaites avoir.
-// S'il te reste des questions tu peux toujours faire appel à un membre du @👮 Staff.
+bot.on('message', message => {
+  if (message.content === prefix + "rolelist") {
+    var iconb = bot.user.avatarURL;
+    var iconm = message.author.avatarURL
+    var name = message.guild.id
+    var statsmsg = new Discord.RichEmbed()
+    .setAuthor("InfoRoles - Loup Omega", iconb)
+    .addField(`Roles¬`, '`'+ bot.guilds.get(name).roles.map(r => r.name).join(", ") + '`')
+    .setColor("#A901DB")
+    .setFooter(`Demandé par ${message.author.tag}`, iconm)
+    
+    message.delete().catch(O_o=>{});
+    message.channel.sendMessage(statsmsg);
+  }
+}); 
 
 bot.on("message", async message => {
   if(message.author.bot) return;
