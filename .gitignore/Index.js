@@ -277,28 +277,32 @@ bot.on('message', message => {
 bot.login(process.env.TOKEN);
 
 bot.on('guildMemberAdd', member => {
-  var role = member.guild.roles.find('name', '👤 Visiteur');
+    console.log('User ' + member.username + 'à rejoins le serveur ')
+    var role = member.guild.roles.find('name', '👤 Visiteur');
+    member.addRole(role)
+});
+
+bot.on('guildMemberAdd', member => {
   var welcomemsg = new Discord.RichEmbed()
   .setColor("#009900")
   .setDescription(
   `${member}, nous te souhaitons la bienvenue :wave:  !
   Nous t'invitons à lire le salon #informations pour en savoir plus sur la communauté et passer par le salon #les-rôles pour t'assigner les rôles que tu souhaites avoir.
   S'il te reste des questions tu peux toujours faire appel à un membre du <@&483023705648136192>`)
-  var welcomemsgsend = member.guild.channels.find(`name`, "salon-accueil");
+  var welcomemsgsend = member.guild.channels.find("name", "salon-accueil")
   if(!welcomemsgsend) return;
 
-  welcomemsgsend.send(welcomemsg);
-  member.addRole(role)
+  welcomemsgsend.sendEmbed(welcomemsg);
 });
 
 bot.on('guildMemberRemove', member => {
   var welcomemsg = new Discord.RichEmbed()
   .setColor("#bc0000")
   .setDescription(`${member}, nous a quitté. :wave: ! `)
-  var welcomemsgsend = member.guild.channels.find(`name`, "salon-accueil");
+  var welcomemsgsend = member.guild.channels.find(`name`, "salon-accueil")
   if(!welcomemsgsend) return;
 
-  welcomemsgsend.send(welcomemsg);
+  welcomemsgsend.sendEmbed(welcomemsg);
 });
 
 //-----------------------------------------------------------------------------------------
