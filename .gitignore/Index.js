@@ -158,15 +158,17 @@ bot.on('message', message => {
         Ce rôles vous donnera la possibilité de participer au salon #créations.`)
         .setColor("#10D56C")
       var role = new Discord.RichEmbed()
-        .addField(":milky_way: Rôles Auto-Assignable",
-        `Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé.
-        Si tu cherhe as avoir un role fait **!role**`)
-        .setColor("#C0013D")
+        .addField(":milky_way: Rôles général", 'Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé.\nSi tu cherhe as avoir un role fait `' + `!role` +'`')
+        .setColor("#4354C0")
+      var jeu = new Discord.RichEmbed()
+        .addField("🎮 Rôles Jeux", 'Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé. Si tu cherhe as avoir un role jeu fait `' + `!jeux` +'`')
+        .setColor("#0E8CB3")
       message.delete().catch(O_o=>{});
       message.guild.channels.find("name", "les-rôles").sendEmbed(embed11)
       message.guild.channels.find("name", "les-rôles").sendEmbed(embed22)
       message.guild.channels.find("name", "les-rôles").sendEmbed(embed33)
       message.guild.channels.find("name", "les-rôles").sendEmbed(role)
+      message.guild.channels.find("name", "les-rôles").sendEmbed(jeu)
     }else{
       return message.reply("Tu n'as pas la permission.")
   }}});
