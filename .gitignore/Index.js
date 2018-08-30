@@ -85,7 +85,7 @@ bot.on('message', message => {
         .setColor("#CD2929")
       var embed5 = new Discord.RichEmbed()
         .setAuthor("Bienvenue !", iconm)
-        .addField("si votre compte Discord n'a pas son adresse e-mail de vérifiée, vous ne serrez pas apte à ècrire dans ce salon. une fois ceci fait,", "vous n'aurez plus qu'a entrer sois !accepte sois !refuser")
+        .addField("si votre compte Discord n'a pas son adresse e-mail de vérifiée, vous ne serrez pas apte à ècrire dans ce salon. une fois ceci fait,", "vous n'aurez plus qu'a entrer sois `" + `!accepte` + "` sois `" + `!refuser` + "`")
         .setColor("#A901DB")
         .setTimestamp()
         .setFooter("Create by Zεяsтöяυη")
