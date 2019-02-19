@@ -62,7 +62,7 @@ bot.on("ready", async () => {
 
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "reglement")) {
-    if(message.author.id == "404351381093351425") {
+    if(message.author.id == "104935392658137088") {
       let args = message.content.split(" ").slice(1);
       let thingToEcho = args.join(" ")
       var iconm = message.author.avatarURL
@@ -139,7 +139,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "roleinfo")) {
-    if(message.author.id == "404351381093351425") {
+    if(message.author.id == "104935392658137088") {
       let args = message.content.split(" ").slice(1);
       let thingToEcho = args.join(" ")
       var iconm = message.author.avatarURL
@@ -257,7 +257,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
   if (message.content.startsWith(prefix + "18+")) {
-    if(message.channel.id == "484045711017508875") {
+    if(message.channel.id == "501843188865171457") {
       var iconm = message.author.avatarURL
       var embed = new Discord.RichEmbed()
         .setAuthor(`${message.author.tag}`, iconm)
@@ -276,34 +276,28 @@ bot.on('message', message => {
 
 bot.login(process.env.TOKEN);
 
-bot.on('guildMemberAdd', member => {
-    console.log('User ' + member.username + 'à rejoins le serveur ')
-    var role = member.guild.roles.find('name', '👤 Visiteur');
-    member.addRole(role)
-});
+//bot.on('guildMemberAdd', member => {
+  //var welcomemsg = new Discord.RichEmbed()
+  //.setColor("#009900")
+  //.setDescription(
+  //`${member}, nous te souhaitons la bienvenue :wave:  !
+  //Nous t'invitons à lire le salon #informations pour en savoir plus sur la communauté et passer par le salon #les-rôles pour t'assigner les rôles que tu souhaites avoir.
+  //S'il te reste des questions tu peux toujours faire appel à un membre du <@&483023705648136192>`)
+  //var welcomemsgsend = member.guild.channels.find("name", "salon-accueil")
+ // if(!welcomemsgsend) return;
 
-bot.on('guildMemberAdd', member => {
-  var welcomemsg = new Discord.RichEmbed()
-  .setColor("#009900")
-  .setDescription(
-  `${member}, nous te souhaitons la bienvenue :wave:  !
-  Nous t'invitons à lire le salon #informations pour en savoir plus sur la communauté et passer par le salon #les-rôles pour t'assigner les rôles que tu souhaites avoir.
-  S'il te reste des questions tu peux toujours faire appel à un membre du <@&483023705648136192>`)
-  var welcomemsgsend = member.guild.channels.find("name", "salon-accueil")
-  if(!welcomemsgsend) return;
+  //welcomemsgsend.sendEmbed(welcomemsg);
+//});
 
-  welcomemsgsend.sendEmbed(welcomemsg);
-});
+//bot.on('guildMemberRemove', member => {
+ // var welcomemsg = new Discord.RichEmbed()
+  //.setColor("#bc0000")
+ // .setDescription(`${member}, nous a quitté. :wave: ! `)
+ // var welcomemsgsend = member.guild.channels.find(`name`, "salon-accueil")
+ // if(!welcomemsgsend) return;
 
-bot.on('guildMemberRemove', member => {
-  var welcomemsg = new Discord.RichEmbed()
-  .setColor("#bc0000")
-  .setDescription(`${member}, nous a quitté. :wave: ! `)
-  var welcomemsgsend = member.guild.channels.find(`name`, "salon-accueil")
-  if(!welcomemsgsend) return;
-
-  welcomemsgsend.sendEmbed(welcomemsg);
-});
+ // welcomemsgsend.sendEmbed(welcomemsg);
+//});
 
 //-----------------------------------------------------------------------------------------
 //---------------------------------systeme role--------------------------------------------
@@ -356,15 +350,12 @@ bot.on('message', async message => {
 		if (isCommand('role')) {
 
 			//role id for the years
-			let joueur = "483023905997455361";
-			let photographe = "483024437613166594";
-			let Artistes = "483023936880115732";
-			let écrivain = "483024437613166594";
-			let Dessinateur = "483024251797110784";
-			let HyperEvent = "483024472505319425";
-			let TeamTarKyo = "483311263342919690";
-			let TeamReA974 = "483311365029625856";
-			let Teamfurry = "483311745121779724";
+			let graph = "501841783177609226";
+			let impri = "501841729792639026";
+			let Joueur = "547358901683879936";
+			let Ami = "542104863488737300";
+			let Homme = "501844746897981459";
+			let Femme = "501844945519378442"
 			
 
 
@@ -378,34 +369,25 @@ bot.on('message', async message => {
 					.setTitle("Bienvenue sur le serveur")
 					.setDescription("*Merci d'indiquer t'es roles que tu désire*")
 					.setColor("#8B008B")
+					.addField("Graphiste", "🌠", true)
+					.addField("Imprimeur", "📖", true)
 					.addField("Joueur", "🎮", true)
-					.addField("Photographe", "📷", true)
-					.addField("Artiste", "🌠", true)
-					.addField("Ecrivain", "📖", true)
-					.addField("Dessinateur", "🖌", true)
-					.addField("HyperEvent", "🎁", true)
-					.addField("#Team TarKyo", "🌌", true)
-					.addField("#Team ReA974", "⚡", true)
-					.addField("Team Furry", "🐺", true)
-					.addField("🎬 Vous êtes streameur ?", "Merci de contacté un staff", true)
-					.addField("🔞 Tu as 18 ans ?", "Merci de contacté un staff", true)
-					.addField("🎉 Tu cherche as créé de l'animation ?", "Merci de contacté un staff", true)
+					.addField("Ami", "💓", true)
+					.addField("Homme", "👔", true)
+					.addField("Femme", "👗", true)
 					.setFooter("créé par TarKyo");
 
 				//send embed ans add reaction
 				message.author.send({ embed: yearChoose }).then(async embedMessage => {
-					await embedMessage.react("🎮");
-					await embedMessage.react("📷");
 					await embedMessage.react("🌠");
 					await embedMessage.react("📖");
-					await embedMessage.react("🖌");
-					await embedMessage.react("🎁");
-					await embedMessage.react("🌌");
-					await embedMessage.react("⚡");
-					await embedMessage.react("🐺");
+					await embedMessage.react("🎮");
+					await embedMessage.react("💓");
+					await embedMessage.react("👔");
+					await embedMessage.react("👗");
 
 					// Create a reaction collector
-					const filter = (reaction, user) => (reaction.emoji.name === "🎮" || reaction.emoji.name === "📷" || reaction.emoji.name === "🌠" || reaction.emoji.name === "📖" || reaction.emoji.name === "🖌" || reaction.emoji.name === "🎁" || reaction.emoji.name === "🌌" || reaction.emoji.name === "⚡" || reaction.emoji.name === "🐺" ) && user.id === messageAuthorId
+					const filter = (reaction, user) => (reaction.emoji.name === "🌠" || reaction.emoji.name === "📖" || reaction.emoji.name === "🎮" || reaction.emoji.name === "💓" || reaction.emoji.name === "👔" || reaction.emoji.name === "👗" ) && user.id === messageAuthorId
 					// (reaction.emoji.name === "🎮" || reaction.emoji.name === "📷" || reaction.emoji.name === "🌠" || reaction.emoji.name === "📖" || reaction.emoji.name === "🖌" || reaction.emoji.name === "🎁" || reaction.emoji.name === "🌌" || reaction.emoji.name === "⚡" || reaction.emoji.name === "🐺" ) && user.id === messageAuthorId
 					const collector = embedMessage.createReactionCollector(filter, { time: 555555555 ,max: 9999, maxEmojis: 99999, maxUsers: 9999 })
 					await collector.on("collect", async MessageReaction => {
@@ -413,32 +395,23 @@ bot.on('message', async message => {
 						const chosen = MessageReaction.emoji.name;
 
 						switch (chosen) {
-							case "🎮":
-								message.member.addRole(joueur);
-								break;
-							case "📷":
-								message.member.addRole(photographe);
-								break;
 							case "🌠":
-								message.member.addRole(Artistes);
+								message.member.addRole(graph);
 								break;
 							case "📖":
-								message.member.addRole(écrivain);
+								message.member.addRole(impri);
 								break;
-							case "🖌":
-								message.member.addRole(Dessinateur);
+							case "🎮":
+								message.member.addRole(Joueur);
 								break;
-							case "🎁":
-								message.member.addRole(HyperEvent);
+							case "💓":
+								message.member.addRole(Ami);
 								break;
-							case "🌌":
-								message.member.addRole(TeamTarKyo);
+							case "👔":
+								message.member.addRole(Homme);
 								break;
-							case "⚡":
-								message.member.addRole(TeamReA974);
-								break;
-							case "🐺":
-								message.member.addRole(Teamfurry);
+							case "👗":
+								message.member.addRole(Femme);
 								break;
 						}
 					});
