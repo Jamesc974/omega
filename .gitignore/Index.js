@@ -280,8 +280,7 @@ bot.on('guildMemberAdd', member => {
   var welcomemsg = new Discord.RichEmbed()
   var role = member.guild.roles.find('name', '👤 TRPIP');
   .setColor("#009900")
-  .setDescription(
-  `${member}, nous te souhaitons la bienvenue :wave:)
+  .setDescription(`${member}, nous te souhaitons la bienvenue :wave:`)
   var welcomemsgsend = member.guild.channels.find("name", "salon-accueil")
   if(!welcomemsgsend) return;
 
