@@ -152,7 +152,7 @@ bot.on('message', message => {
         .addField("Pour avoir le grade", `faite !18+, ensuite un staff viendra vous parlez`)
         .setColor("#6B1979")
       var role = new Discord.RichEmbed()
-        .addField(":milky_way: Rôles général", 'Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé.\nSi tu cherhe as avoir un role fait `' + `!role` +'`')
+        .addField(":milky_way: Rôles général", 'Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé.\nSi tu cherhe as avoir un role fait `' + `!role` +'` dans #les-commande-bot ')
         .setColor("#4354C0")
       var jeu = new Discord.RichEmbed()
         .addField("🎮 Rôles Jeux", 'Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé. Si tu cherhe as avoir un role jeu fait `' + `!jeux` +'`')
