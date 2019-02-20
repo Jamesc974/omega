@@ -144,19 +144,13 @@ bot.on('message', message => {
       let thingToEcho = args.join(" ")
       var iconm = message.author.avatarURL
       var embed11 = new Discord.RichEmbed()
-        .addField(":bust_in_silhouette: Visiteur", "Il s’agit du rôle que vous obtenez en arrivant sur le serveur. Il ne vous confère aucune permission mais celui-ci indique que vous êtes présent sur le serveur.")
+        .addField(":bust_in_silhouette: TRPIP", "Il s’agit du rôle que vous obtenez en arrivant sur le serveur Discord.")
         .setColor("#151414")
       var embed22 = new Discord.RichEmbed()
         .addField(":underage: 18+",
-        `Pour avoir ce rôle il vous faut déjà être membre et ensuite avoir plus de 18 ans. Mais ce n’est pas tout, il vous donne l’accès au salon #general-18+ qui est un salon regroupant des discussions plus adultes et nous attendons de vous que vous le soyez.`)
-        .addField("Condition", `Avoir le rôle Membre`)
+        `Pour avoir ce rôle il vous faut juste être mature`)
         .addField("Pour avoir le grade", `faite !18+, ensuite un staff viendra vous parlez`)
         .setColor("#6B1979")
-      var embed33 = new Discord.RichEmbed()
-        .addField(":paintbrush: Artiste",
-        `Pour disposer de ce rôle, il faut que vous soyez créateur de contenus originaux. En passant du dessin, à l'écriture, sans oublier la photographie, les différents.
-        Ce rôles vous donnera la possibilité de participer au salon #créations.`)
-        .setColor("#10D56C")
       var role = new Discord.RichEmbed()
         .addField(":milky_way: Rôles général", 'Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé.\nSi tu cherhe as avoir un role fait `' + `!role` +'`')
         .setColor("#4354C0")
@@ -166,7 +160,6 @@ bot.on('message', message => {
       message.delete().catch(O_o=>{});
       message.guild.channels.find("name", "role").sendEmbed(embed11)
       message.guild.channels.find("name", "role").sendEmbed(embed22)
-      message.guild.channels.find("name", "role").sendEmbed(embed33)
       message.guild.channels.find("name", "role").sendEmbed(role)
       message.guild.channels.find("name", "role").sendEmbed(jeu)
     }else{
