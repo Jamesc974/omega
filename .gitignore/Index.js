@@ -164,11 +164,11 @@ bot.on('message', message => {
         .addField("🎮 Rôles Jeux", 'Ces différents rôles peuvent être obtenu en ajoutant la réaction qui lui est associé. Si tu cherhe as avoir un role jeu fait `' + `!jeux` +'`')
         .setColor("#0E8CB3")
       message.delete().catch(O_o=>{});
-      message.guild.channels.find("name", "les-rôles").sendEmbed(embed11)
-      message.guild.channels.find("name", "les-rôles").sendEmbed(embed22)
-      message.guild.channels.find("name", "les-rôles").sendEmbed(embed33)
-      message.guild.channels.find("name", "les-rôles").sendEmbed(role)
-      message.guild.channels.find("name", "les-rôles").sendEmbed(jeu)
+      message.guild.channels.find("name", "role").sendEmbed(embed11)
+      message.guild.channels.find("name", "role").sendEmbed(embed22)
+      message.guild.channels.find("name", "role").sendEmbed(embed33)
+      message.guild.channels.find("name", "role").sendEmbed(role)
+      message.guild.channels.find("name", "role").sendEmbed(jeu)
     }else{
       return message.reply("Tu n'as pas la permission.")
   }}});
