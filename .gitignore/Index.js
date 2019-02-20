@@ -439,14 +439,14 @@ bot.on('message', async message => {
 		if (isCommand('jeux')) {
 
 			//role id for the years
-			let Fortnite = "484349487414902784";
+			let leagueoflegends = "484349487414902784";
 			let Minecraft = "484349752763482127";
 			let CSGO = "484349861517328395";
 			let ArmaIII = "484349931914526721";
-			let PUBG = "484349989800247297";
+			let ApexLegends = "484349989800247297";
 			let GTAV = "484350077612064768";
 			let RocketLeague = "484350151737999381";
-			let ForHonor = "484350226421907469";
+			let Scum = "484350226421907469";
 			let Garrysmod = "484350307330162698";
 			
 
@@ -460,14 +460,14 @@ bot.on('message', async message => {
 					.setTitle("Bienvenue sur le serveur")
 					.setDescription("*Merci d'indiquer t'es roles que tu désire*")
 					.setColor("#8B008B")
-					.addField("Fortnite", "🌠", true)
+					.addField("League Of Legends", "🌠", true)
 					.addField("Minecraft", "🌍", true)
 					.addField("CSGO", "💣", true)
 					.addField("Arma III", "🔫", true)
-					.addField("PUBG", "🌀", true)
+					.addField("Apex Legends", "🌀", true)
 					.addField("GTA V", "🏦", true)
 					.addField("Rocket League", "🚀", true)
-					.addField("For Honor", "🛡", true)
+					.addField("Scum", "🛡", true)
 					.addField("Garry's Mod", "🔵", true)
 					.addField("❓ Vous avez d'autres idées de jeux ?", "Faite le nous s'avoir", true)
 					.setFooter("By TarKyo");
@@ -494,7 +494,7 @@ bot.on('message', async message => {
 
 						switch (chosen) {
 							case "🌠":
-								message.member.addRole(Fortnite);
+								message.member.addRole(leagueoflegends);
 								break;
 							case "🌍":
 								message.member.addRole(Minecraft);
@@ -506,7 +506,7 @@ bot.on('message', async message => {
 								message.member.addRole(ArmaIII);
 								break;
 							case "🌀":
-								message.member.addRole(PUBG);
+								message.member.addRole(ApexLegends);
 								break;
 							case "🏦":
 								message.member.addRole(GTAV);
@@ -515,7 +515,7 @@ bot.on('message', async message => {
 								message.member.addRole(RocketLeague);
 								break;
 							case "🛡":
-								message.member.addRole(ForHonor);
+								message.member.addRole(Scum);
 								break;
 							case "🔵":
 								message.member.addRole(Garrysmod);
