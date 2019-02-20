@@ -439,15 +439,15 @@ bot.on('message', async message => {
 		if (isCommand('jeux')) {
 
 			//role id for the years
-			let leagueoflegends = "484349487414902784";
-			let Minecraft = "484349752763482127";
-			let CSGO = "484349861517328395";
-			let ArmaIII = "484349931914526721";
-			let ApexLegends = "484349989800247297";
-			let GTAV = "484350077612064768";
-			let RocketLeague = "484350151737999381";
-			let Scum = "484350226421907469";
-			let Garrysmod = "484350307330162698";
+			let leagueoflegends = "547777111835017246";
+			let Minecraft = "547777538945187840";
+			let CSGO = "547777583467724800";
+			let ArmaIII = "547777651449004033";
+			let ApexLegends = "547777705236496384";
+			let GTAV = "547777770466574336";
+			let RocketLeague = "547777822551179265";
+			let Scum = "547777871263957013";
+			let Garrysmod = "547777934585233417";
 			
 
 
